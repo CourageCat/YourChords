@@ -23,7 +23,7 @@ const Validation = (values) => {
         error.password = "Password is Required!";
     } else if (!password_pattern.test(values.password)) {
         error.password =
-            "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!";
+            "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!!!";
     }
 
     return error;
