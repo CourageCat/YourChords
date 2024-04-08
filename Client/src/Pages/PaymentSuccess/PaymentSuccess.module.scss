@@ -1,0 +1,110 @@
+@import "@fontsource/newsreader"; // Defaults to weight 400
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+.header {
+    border-bottom: 2px solid black;
+    margin: 0px 400px 0px 400px;
+    flex-direction: column;
+    text-align: center;
+    list-style-position: outside;
+    margin-top: 100px;
+}
+
+.body {
+    text-align: center;
+}
+
+.icon-check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-viewBeat {
+    margin-top: 80px;
+    padding: 0 66px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.wrapper-viewBeat td,
+.wrapper-viewBeat th {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 3px solid #ddd;
+    border: 1px solid #fff;
+}
+
+.wrapper-viewBeat tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.wrapper-viewBeat tr:hover {
+    background-color: #ddd;
+}
+
+.wrapper-viewBeat th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #06c;
+    color: white;
+}
+
+.wrapper-viewBeat table {
+    margin: 0 auto;
+    height: 400px;
+    width: 100%;
+    padding-left: 50px;
+    border-collapse: collapse;
+    background-color: rgb(179, 235, 245);
+
+}
+
+.wrapper-viewBeat tr {
+    width: 100%;
+}
+
+.button-options {
+    text-align: center;
+
+}
+
+.button-options button {
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: #06c;
+    outline: 3px solid #fff;
+    color: white;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.before-body {
+    width: 100%;
+    border-top: 1px solid var(--gray-100, #e4e7e9);
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.before-body-1 {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 2px solid var(--secondary-500, #2da5f3);
+    padding: 10px 24px;
+    color: #2da5f3;
+    user-select: none;
+}
+.text-body{
+    line-height: 25px;
+}

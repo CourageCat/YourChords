@@ -1,0 +1,518 @@
+@import url('https://fonts.cdnfonts.com/css/sono');
+@import url('https://fonts.cdnfonts.com/css/fredoka-one');
+
+
+.firstpart {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: -60px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.title {
+    text-transform: uppercase;
+    text-align: center;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    font-size: 100px;
+    border-bottom: 1px solid var(--gray-100, #e4e7e9);
+    font-family: fredoka one;
+    width: 85%;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.searchBox {
+    transform: translate(0%, 100%);
+    background: #ffffff;
+    height: 80px;
+    border-radius: 40px;
+    padding: 10px;
+    margin-right: -50px;
+    margin-top: -100px;
+    margin-bottom: 10px;
+    width: 55%;
+    display: flex;
+    margin-left: 60px;
+}
+
+.searchBox:hover>.searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover>.searchButton {
+    background: #ffffff;
+    color: #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    background: none;
+    border: none;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    float: right;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+    .searchBox:hover>.searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+}
+
+.material-icons {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.list-songs {
+    margin-top: 60px;
+    object-fit: contain;
+    height: auto;
+    margin-bottom: 200px
+}
+
+.list-songs-details {
+    display: flex;
+}
+
+.hot-today-item-song {
+    font-weight: bold;
+}
+
+.list-songs-middle {
+    background: #fff;
+    width: 40%;
+    height: 100%;
+    box-shadow: 0 0 0 2px white, 0.3em 0.3em 1em rgba(134, 134, 134, 0.6);
+    margin-left: -50px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.line {
+    width: 60%;
+    background: #ececec;
+    border-radius: 30px;
+    border: 0.5px black solid;
+    margin-bottom: 60px;
+    margin-left: 360px;
+}
+
+.sum {
+    display: flex;
+    justify-content: center;
+}
+
+.panel-title {
+    color: #5c9bcb;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.middle-moinoi {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    gap: 120px;
+    margin-left: 50px;
+    padding: 10px;
+    height: 700px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-family: Sono;
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 40px;
+
+}
+
+.title-song-style {
+    display: flex;
+    justify-content: center;
+    margin-left: -10px;
+    font-family: sono;
+
+}
+
+.title-song-style2 {
+    display: flex;
+    justify-content: center;
+    margin-left: -10px;
+    margin-bottom: 30px;
+    font-family: sono;
+    font-size: 4rem;
+}
+
+// rythym 
+.rhythm-item {
+    white-space: nowrap;
+    background-color: #e7e7e7;
+    padding: 0 7px;
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 2px;
+    display: inline-block;
+}
+
+.rhythm-item:hover {
+    background-color: #0066CC;
+    color: white;
+}
+
+.panel-content-text-center-padding-both {
+    width: 15%;
+    height: 560px;
+    padding: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+// new release today
+.flex-center-start {
+    padding: 0;
+    font-family: Sono;
+    font-size: 14px;
+    color: #333;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3em;
+    display: flex;
+}
+
+.moinoi {
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    height: 100%;
+    width: 18%;
+}
+
+.new-release {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-family: sono;
+    font-size: 19px;
+}
+
+.ot-today-item-song {
+    font-size: 15px;
+    font-family: Sono;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.hot-today-view-count {
+    font-size: 15 px;
+    font-family: Sono;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+//paging
+.tiny-pagination {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    list-style-type: none;
+    padding: 0;
+    padding-inline-start: 40px;
+}
+
+//song-list
+.song-list {
+    margin-top: 240px;
+    background-color: #f1f1f1;
+    padding: 0;
+    font-family: Sono;
+    font-size: 14px;
+    color: #333;
+    -moz-font-smoothing: antialiased;
+    -ms-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.3em;
+    padding: 10px;
+}
+
+.song-item-small {
+    display: block;
+    padding: 5px 10px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.song-title {
+    font-weight: bold;
+}
+
+.newrequest-title {
+    display: flex;
+    justify-content: center;
+    font-family: sono;
+}
+
+.button-chords {
+    text-align: center;
+}
+
+.button {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 10px;
+
+}
+
+.button:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button:active {
+    color: #000
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.Add-Songs {
+    width: 100%;
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Add-Songs-body {
+    display: inline-block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.168px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 2px solid var(--secondary-500, #2da5f3);
+    padding: 10px 24px;
+    color: #2da5f3;
+    user-select: none;
+}
+
+.body-right {
+    flex: 7;
+
+    // Add a new container for the scrollable content
+    .scroll-container {
+        height: 560px;
+        /* Adjust as needed */
+        overflow-y: auto;
+        padding-right: 15px;
+        /* Add padding to compensate for scrollbar width */
+        box-sizing: content-box;
+        padding: 5px;
+
+        &::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            /* Make the thumb transparent */
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+            /* Make the track transparent */
+        }
+    }
+}
+
+.song {
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin-bottom: 27px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    filter: drop-shadow(0 0 0.5rem rgb(146, 143, 144));
+    cursor: pointer;
+    width: 90%;
+    margin-left: 20px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        filter: drop-shadow(0 0 0.6rem rgb(202, 93, 130));
+    }
+}
+
+.name-and-musician {
+    display: flex;
+    justify-content: start;
+    height: 45px;
+}
+
+.song-name {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.option {
+    margin-top: 25px;
+}
+
+.pagination {
+    justify-content: end;
+    align-items: end;
+    text-align: end;
+    margin-right: 50px;
+}
+
+.pagination span {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pagination button svg {
+    padding-top: 5px;
+}
+
+// pop up delete
+.button-page {
+    background: none;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.rhythm-list {
+    display: grid;
+    row-gap: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pagination {
+    margin-left: 500px
+}
+
+// .box-img {
+//     width: 25%;
+// }
+
+.number-song{
+    width: 50%;
+}
+
+.img{
+    width: 20%;
+}
+
+// .number{
+//     display: flex;
+//     align-items: center;
+//     text-align: center;
+//     margin-bottom: 50px;
+//     // margin-left: 10px;
+// }

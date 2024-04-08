@@ -1,0 +1,20 @@
+1. 
+Username: hienstudent
+Email: hiennmse170279@fpt.edu.vn
+Fullname: I am Hien student
+Password: 123456
+Confirm password: 123456
+
+2.
+Username: hiennguyen
+Email: hiennguyen14701@gmail.com
+Fullname: I am Nguyen Hien
+Password: 123456
+Confirm password: 123456
+
+3.
+Username: couragecat
+Email: tinpro14701@gmail.com
+Fullname: I am Courage
+Password: 123456
+Confirm password: 123456

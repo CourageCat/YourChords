@@ -1,0 +1,15 @@
+1.
+sb-47cgtm27848296@personal.example.com
+123456789
+
+2.
+sb-apltv27883456@business.example.com
+123456789
+
+3.
+sb-1wi64727934707@personal.example.com
+123456789
+
+4.
+sb-w43qpk27934706@personal.example.com
+123456789

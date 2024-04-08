@@ -1,0 +1,246 @@
+.card-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 120px;
+  justify-content: space-around;
+  margin-bottom:600px
+}
+
+// Shop card
+.shop-card {
+  width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 4px;
+  border: 1px solid var(--gray-100, #e4e7e9);
+  background: var(--gray-00, #fff);
+
+  // Card header
+  .card-header {
+    padding: 20px 24px;
+    gap: 10px;
+
+    .cart-heading {
+      color: var(--gray-900, #191c1f);
+      font-size: 2.8rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.33;
+      user-select: none;
+    }
+  }
+
+  //   Card content ==========
+  //   Card names
+  .card-names {
+    width: 100%;
+    display: flex;
+    padding: 10px 24px;
+    align-items: center;
+    border: 1px solid var(--gray-100, #e4e7e9);
+    border-left: none;
+    border-right: none;
+    background: #06c;
+
+    justify-content: flex-end;
+
+
+    .card-title {
+      color: white;
+      /* Label/04 */
+      font-size: 1.2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 1.8;
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    .card-product {
+      width: 50%;
+      margin-right: 20px;
+    }
+
+    .card-genre {
+      width: 10%;
+      margin-right: 75px;
+    }
+
+    .card-author {
+      width: 10%;
+      margin-right: 50px;
+    }
+
+    .card-price {
+      width: 10%;
+      margin-right: 15px;
+    }
+
+
+  }
+
+  //   List card
+  .list-card {
+    width: 100%;
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  //   Card footer ================
+  .card-footer {
+    width: 100%;
+    border-top: 1px solid var(--gray-100, #e4e7e9);
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+
+    .card-action {
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.168px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 2px solid var(--secondary-500, #2da5f3);
+      padding: 10px 24px;
+      color: #2da5f3;
+      user-select: none;
+    }
+  }
+}
+
+// Card total
+.card-total {
+  width: 476px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--gray-100, #e4e7e9);
+  background: var(--gray-00, #fff);
+
+  // Header ==========
+  .card-header {
+    gap: 10px;
+
+    .card-heading {
+      color: var(--gray-900, #191c1f);
+      font-size: 1.8rem;
+      font-weight: 500;
+      user-select: none;
+    }
+  }
+
+  // Content ==========
+  .card-content {
+    width: 100%;
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--gray-600, #5f6c72);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    .item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .card-title {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: var(--gray-600, #5f6c72);
+      }
+
+      .card-name {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--gray-900, #191c1f);
+        user-select: none;
+      }
+    }
+  }
+
+  // Footer
+  .card-footer {
+    width: 100%;
+    margin-top: 16px;
+
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+
+      .card-name {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        user-select: none;
+      }
+    }
+
+    .card-action {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 3px;
+      color: var(--gray-00, #fff);
+      border-radius: 3px;
+      background: var(--primary-500, #0066CC);
+      padding: 15px 0;
+      user-select: none;
+      cursor: pointer;
+      width: 100%;
+    }
+  }
+}
+
+.card-price {
+  margin-right: 60px;
+}
+
+.card-after-action {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.card-payment {
+  color: var(--gray-900, #191c1f);
+  font-size: 1.8rem;
+  font-weight: 500;
+  user-select: none;
+  padding-top: 25px;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  border-top: 1px solid var(--gray-600, #5f6c72);
+}
+
+.card-banking {
+  padding: 20px;
+
+  .img {
+    width: 100px;
+  }
+
+}
+
+.card-last-info {
+  font-size: 1.5rem;
+}

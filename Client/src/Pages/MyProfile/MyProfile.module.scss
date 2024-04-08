@@ -1,0 +1,418 @@
+@import url('https://fonts.cdnfonts.com/css/newsreader-2');
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import "@fontsource/newsreader"; // Defaults to weight 400
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sono');
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import url('https://fonts.cdnfonts.com/css/fredoka-one');
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 130px;
+    padding: 20px;
+    width: 70%;
+    margin-left: 250px;
+}
+
+.line {
+    //     width: 60%;
+    background: #ececec;
+    //     border-radius: 30px;
+    border: 0.5px black solid;
+    // margin-bottom: 60px;
+    //     margin-left: 360px;
+    //     margin-top :60px;
+    height: 300px;
+}
+
+.title-myprofile {
+    text-transform: uppercase;
+    margin-left: 610px;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 100px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+// image
+.box-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    gap: 60px;
+    object-fit: cover;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 95px;
+    background-image: url(../../assets/images/Trending/beautiful-girl-sitting-down-playing-the-piano.webp);
+
+}
+
+.img-user-div2 {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    border-radius: 20px;
+    width: 500px;
+    padding: 30px;
+    filter: drop-shadow(0 0 0.5rem rgb(146, 143, 144));
+    height: 500px;
+}
+
+//form info user
+.volt8A {
+    height: auto;
+    width: 900px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 0.5rem rgb(146, 143, 144));
+    margin-bottom: 250px;
+
+}
+
+.profile-2 {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+.input-username {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    height: 1px;
+    margin-left: -50px;
+}
+
+.input-phonenumber {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    height: 1px;
+    margin-left: 70px;
+
+}
+
+.input-username0 {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    margin-top: 30px;
+    height: 1px;
+    flex-shrink: 0;
+    font-size: 1.8rem;
+}
+
+.text-username {
+    margin-left: 30px;
+}
+
+.text-username0 {
+    margin-left: 65px;
+}
+
+.input-text {
+    margin: 0;
+    padding: 4px 0 0;
+    font-size: 1.3rem;
+    line-height: 1.25rem;
+    margin-top: 10px;
+}
+
+.login-text {
+    font-family: fredoka one;
+    margin-left: 4px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.part4 {
+    display: flex;
+
+    .stardus-radio-group {
+        justify-content: center;
+        gap: 80px;
+        margin-top: 40px;
+    }
+
+}
+
+.part1 {
+    margin-top: 40px;
+    display: flex;
+
+    .placeholder-ten {
+        margin-left: 117px;
+        width: 240px;
+        height: 28px;
+
+        .input-ten {
+            width: 240px;
+            height: 28px;
+        }
+    }
+}
+
+.part4 {
+    margin-top: 40px;
+    margin-left: -4px;
+
+    .sex {
+        font-family: fredoka one;
+        margin-left: 6px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+
+.part3 {
+    margin-top: 40px;
+
+}
+
+.part3>td {
+    font-family: inter;
+}
+
+.text-name {
+    font-family: inter;
+    margin-left: 71px;
+}
+
+.stardus-radio-group {
+    display: flex;
+    margin-left: 60px;
+    gap: 30px;
+}
+
+.part0 {
+    margin-bottom: 40px;
+}
+
+.part2>td {
+    display: flex;
+    justify-content: center;
+    margin-left: -270px;
+    margin-top: 60px;
+    display: flex;
+}
+
+.email-change {
+    margin-left: 50px;
+    margin-top: 7px;
+}
+
+.email-text {
+    text-align: start;
+    font-family: fredoka one;
+    font-size: 20px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.part5 {
+    margin-top: 60px;
+    display: flex;
+    justify-content: start;
+    margin-left: 70px;
+
+    .button-save-details {
+        width: 70px;
+        height: 40px;
+        border: none;
+        background-color: #06c;
+        color: white;
+        font-family: inter;
+        border-radius: 5px;
+
+    }
+
+}
+
+.email-button {
+    margin-left: 30px;
+    border: none;
+    font-family: Sono;
+    color: #06c;
+}
+
+// male female 
+.footer {
+    display: inline-flex;
+    align-content: center;
+    gap: 55px;
+
+    .footer-left {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .input-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 60%;
+            border: 2px solid rgba(0, 0, 0, .26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+        }
+    }
+
+    .text {
+        font-size: 1.5rem;
+        font-weight: 400;
+        user-select: none;
+        cursor: pointer;
+
+    }
+}
+
+.submit {
+    outline: 3px solid #fff;
+
+}
+
+//iamge user
+.img-click {
+    display: flex;
+    margin-top: 40px;
+    background-color: none;
+    border: none;
+    text-align: center;
+}
+
+.info-user {
+    display: grid;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-family: 'Sono';
+    font-weight: 400;
+}
+
+//file
+.img-click {
+    color: transparent;
+}
+
+.img-click::-webkit-file-upload-button {
+    visibility: hidden;
+}
+
+.img-click::before {
+    content: 'Choose File';
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    width: 90px;
+}
+
+.img-click:hover::before {
+    border-color: black;
+}
+
+.img-click:active {
+    outline: 0;
+}
+
+.img-click:active::before {
+    background: -webkit-lin
+}
+
+// *,
+// *:before,
+// *:after {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+// }
+
+// .img-click {
+//     z-index: 5;
+//     height: 6.5rem;
+//     padding: 0.5rem 1rem;
+//     line-height: 1.5;
+//     color: #555;
+//     background-color: #fff;
+//     border: 0.075rem solid #ddd;
+//     border-radius: 0.25rem;
+//     box-shadow: inset 0 0.2rem 0.4rem rgba(0, 0, 0, .05);
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
+// }
+// .img-click:before {
+
+//     z-index: 6;
+//     display: block;
+//     content: "Browse";
+//     height: 2.5rem;
+//     width: 120px;
+//     padding: 0.5rem 1rem;
+//     line-height: 1.5;
+//     color: #555;
+//     background-color: #eee;
+//     border: 0.075rem solid #ddd;
+//     border-radius: 0 0.25rem 0.25rem 0;
+// }
+// .img-click:after {
+//     content: "Choose file...";
+// }
+// .img-click{
+//     min-width: 14rem;
+
+// }
+// .file{
+//     position: relative;
+//     display: inline-block;
+//     cursor: pointer;
+//     height: 2.5rem;
+// }

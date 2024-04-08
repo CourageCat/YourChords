@@ -1,0 +1,251 @@
+.text-header>h1 {
+    // display: flex;
+    // justify-content: center;
+    // font-size: 50px;
+    font-family: 'Sono';
+    font-weight: bold;
+    text-transform: uppercase;
+    // text-align: center;
+    // font-size: 50px;
+    // padding-top: 40px;
+    // padding-bottom: 10px;
+    // letter-spacing: .15em;
+    // font-size: 80px;
+    margin-right: 200px;
+    border-bottom: 1px solid var(--gray-100, #e4e7e9);
+  }
+  
+  .text-welcome {
+    text-transform: uppercase;
+    margin-left: 320px;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #6fc5ff 67%,
+            #06c 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 100px;
+    margin-bottom: 50px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+  
+  .pagination {
+    margin-left: 1200px;
+  }
+  
+  // .shop-card {
+  //   // margin-left: 420px;
+  //   width: 1000px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  //   border-radius: 4px;
+  //   border: 1px solid var(--gray-100, #e4e7e9);
+  //   background: var(--gray-00, #fff);
+  
+  //   // Card header
+  //   .card-header {
+  //     // padding: 20px 24px;
+  
+  //     // display: flex;
+  //     // justify-content: center;
+  //     // align-items: center ;
+  //     // text-align: center;
+  //     // .cart-heading {
+  //     //   color: var(--gray-900, #191c1f);
+  //     //   font-size: 2.8rem;
+  //     //   font-style: normal;
+  //     //   font-weight: 500;
+  //     //   line-height: 1.33;
+  //     //   user-select: none;
+  //     // }
+  //   }
+  
+  //   //   Card content ==========
+  //   //   Card names
+  //   .card-names {
+  //     width: 1000px;
+  //     display: flex;
+  //     // padding: 10px 24px;
+  //     align-items: center;
+  //     border: 1px solid var(--gray-100, #e4e7e9);
+  //     border-left: none;
+  //     border-right: none;
+  //     background: var(--gray-50, #f2f4f5);
+  
+  //     // justify-content: flex-end;
+  //     // .table {
+  //     //   width: 100%;
+  //     //   border-collapse: collapse;
+  //     //   background-color: #06c;
+  //     //   color: #fff;
+  //     // }
+  
+  //     .card-title {
+  //       color: var(--gray-700, #475156);
+  
+  //       /* Label/04 */
+  //       font-size: 1.2rem;
+  //       font-style: normal;
+  //       font-weight: 500;
+  //       line-height: 1.8;
+  //       text-transform: uppercase;
+  //       user-select: none;
+  //     }
+  
+  //     .card-product {
+  //       width: 10%;
+  //       // margin-right: 20px;
+  //     }
+  
+  //     .card-genre {
+  //       width: 10%;
+  //       // margin-right: 75px;
+  //     }
+  
+  //     .card-author {
+  //       width: 10%;
+  //       margin-right: 50px;
+  //     }
+  
+  //     .card-price {
+  //       width: 10%;
+  //       margin-right: 15px;
+  //     }
+  
+  
+  //   }
+  
+    //   List card
+    .list-card {
+      width: 100%;
+      display: flex;
+      padding: 24px;
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  
+  
+  
+  
+  
+  
+  // .card-names tr th {
+  //   border: 1px solid #000;
+  // }
+  
+  /* Add these styles to your existing CSS file */
+  
+  .shop-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+  }
+  
+  // .card-names {
+  //   display: flex;
+  //   justify-content: space-between;
+  //   margin-bottom: 10px;
+  // }
+  
+  // .card-names>table {
+  //   width: 100%;
+  //   border-collapse: collapse;
+  
+  //   th,
+  //   td {
+  //     padding: 10px;
+  //     text-align: left;
+  //     border-bottom: 1px solid #ddd;
+  //   }
+  
+  //   th {
+  //     background-color: #f2f2f2;
+  //   }
+  
+  //   .list-card {
+  //     display: flex;
+  //     gap: 10px;
+  //   }
+  // }
+  
+  
+  
+  // /* Style for the "Your Beats are not sold out" message */
+  // .shop-card>div:not(.card-names):not(.list-card) {
+  //   margin-top: 20px;
+  //   color: #666;
+  //   font-style: italic;
+  // }
+  
+  /* Add these styles to your existing CSS file */
+  
+  .table-frame {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    font-size: 25px;
+    /* Border color */
+  }
+  
+  .th-frame,
+  .td-frame {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    /* Border color */;
+  }
+  
+  .th-frame {
+    background-color: #06c;
+    color: white;
+  }
+  
+  /* Update your existing table style to use the new class */
+  .table-frame th,
+  .table-frame td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    /* Border color */
+  }
+  
+  /* Add these styles if you want to adjust the width of specific columns */
+  .table-frame .card-genre,
+  .table-frame .card-author,
+  .table-frame .card-price {
+    width: 10%;
+    font-size: 1.4rem;
+    font-weight: 400;
+    user-select: none;
+    margin-left: 30px;
+  }
+  .card-img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 2px;
+    user-select: none;
+  }
+  .table-header{
+    background-color: #06c;
+  }
+  /* Add styles for the CardBeatItem component if needed */

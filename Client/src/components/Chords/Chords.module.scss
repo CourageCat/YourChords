@@ -1,0 +1,123 @@
+.list-box {
+    width: 270px;
+    color: white;
+}
+
+
+.card-item {
+    position: relative;
+    width: 100%;
+    
+    .play-btn {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        color: #0066CC;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        user-select: none;
+    }
+
+    .play.playing {
+        display: block;
+    }
+
+    .pause {
+        display: none;
+    }
+
+    .play{
+        display: none;
+    }
+
+    .pause.playing {
+        display: block;
+    }
+
+
+    .box-img {
+        display: block;
+        width: 130px;
+        height: 132px;
+        object-fit: cover;
+        border-top-right-radius: 13px;
+        border-top-left-radius: 13px;
+    }
+
+    &:hover .play-btn {
+        display: block;
+    }
+}
+
+
+
+.content {
+    padding-top: 10px;
+    background-color: #000000c9;
+    padding: 4px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+
+}
+
+.content-left {
+    width: 70%;
+
+    .name-beat {
+        margin-top: 0;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .like {
+        margin-left: 12px;
+    }
+}
+
+.content-right {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.number-sell {
+    margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    .box {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    .number {}
+
+}
+
+.list-box {
+    box-shadow: 0 5px 5px 0;
+}
+
+.video {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.name-beat:hover {
+    color: #0066CC;
+}
+
+.type-beat:hover {
+    color: #0066CC;
+}

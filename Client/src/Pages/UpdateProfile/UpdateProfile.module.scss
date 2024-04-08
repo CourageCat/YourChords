@@ -1,0 +1,391 @@
+@import url('https://fonts.cdnfonts.com/css/newsreader-2');
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import "@fontsource/newsreader"; // Defaults to weight 400
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sono');
+@import url('https://fonts.cdnfonts.com/css/inter');
+
+.title-feedback{
+    font-size: 30px;
+    font-family: inter;
+    font-weight: 500;
+}
+.profile {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 130px;
+    padding: 20px;
+    width: 70%;
+    margin-left: 250px;
+}
+
+.line {
+    //     width: 60%;
+    background: #ececec;
+    //     border-radius: 30px;
+    border: 0.5px black solid;
+    // margin-bottom: 60px;
+    //     margin-left: 360px;
+    //     margin-top :60px;
+    height: 300px;
+}
+
+.title-myprofile {
+    text-transform: uppercase;
+    margin-left: 610px;
+    margin-top: 200px;
+    background-image: linear-gradient(-225deg,
+            #231557 0%,
+            #44107a 29%,
+            #ff1361 67%,
+            #fff800 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-size: 100px;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+// image
+.box-img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    gap: 60px;
+    object-fit: cover;
+    background-position: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-left: 95px;
+    background-image: url(../../assets/images/Trending/beautiful-girl-sitting-down-playing-the-piano.webp);
+
+}
+
+.img-user-div2 {
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    border-radius: 20px;
+    width: 500px;
+    padding: 30px;
+    height: auto;
+    filter: drop-shadow(0 0 0.5rem rgb(146, 143, 144));
+}
+
+//form info user
+.volt8A {
+    height: auto;
+    width: 900px;
+    padding-left: 20px;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 0.5rem rgb(146, 143, 144));
+    border-radius: 20px;
+
+}
+
+.profile-2 {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+.input-username {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    height: 1px;
+    margin-top: 30px;
+    margin-left: -50px;
+}
+
+.input-phonenumber {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    height: 1px;
+    margin-top: 30px;
+    margin-left: 70px;
+
+}
+
+.input-username0 {
+    padding: 22px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(65, 65, 65);
+    width: 700px;
+    margin-top: 30px;
+    height: 1px;
+    flex-shrink: 0;
+}
+
+.text-username {
+    margin-left: 30px;
+}
+
+.text-username0 {
+    margin-left: 65px;
+}
+
+.input-text {
+    margin: 0;
+    padding: 4px 0 0;
+    font-size: 1.3rem;
+    line-height: 1.25rem;
+    margin-top: 10px;
+}
+
+.login-text {
+    font-family: inter;
+    margin-left: 4px;
+}
+
+.part4 {
+    display: flex;
+
+    .stardus-radio-group {
+        justify-content: center;
+        gap: 80px;
+        margin-top: 40px;
+    }
+
+}
+
+.part1 {
+    margin-top: 40px;
+    display: flex;
+
+    .placeholder-ten {
+        margin-left: 117px;
+        width: 240px;
+        height: 28px;
+
+        .input-ten {
+            width: 240px;
+            height: 28px;
+        }
+    }
+}
+
+.part4 {
+    margin-top: 40px;
+    margin-left: -4px;
+
+    .sex {
+        font-family: inter;
+        margin-left: 6px;
+    }
+}
+
+
+.part3 {
+    margin-top: 100px;
+
+}
+
+.part3>td {
+    font-family: inter;
+    padding-left: 70px;
+}
+
+.text-name {
+    font-family: inter;
+    margin-left: 71px;
+}
+
+.stardus-radio-group {
+    display: flex;
+    margin-left: 60px;
+    gap: 30px;
+}
+
+.part0 {
+    margin-bottom: 40px;
+}
+
+.part2>td {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: -360px;
+    margin-top: 100px;
+    display: flex;
+}
+
+.email-change {
+    margin-left: 50px;
+}
+
+.email-text {
+    margin-left: 95px;
+    font-family: inter;
+
+}
+
+.part5 {
+    margin-top: 60px;
+    display: flex;
+    justify-content: start;
+    margin-left: 40px;
+    gap: 30px;
+
+
+    .button-save-details {
+        width: 120px;
+        height: 60px;
+        border: none;
+        background-color: #06c;
+        color: white;
+        font-family: inter;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .button-save-details2 {
+        width: 120px;
+        height: 60px;
+        border: none;
+        background-color: rgb(39, 214, 39);
+        color: white;
+        font-family: inter;
+        border-radius: 5px;
+        cursor: pointer;
+        .button-save-details2:hover{
+            background-color: red;
+        }
+    }
+
+}
+.button-send {
+    width: 80%;
+    height: 40px;
+    margin-left: 140px;
+    border-radius: 12px;
+    background-color: #06c;
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-family: Sono;
+    font-weight: 500;
+    margin-top: -20px;
+}
+.button-send-2{
+    width: 80%;
+    height: 60px;
+    margin-left: 130px;
+    border-radius: 12px;
+    background-color: rgb(0, 204, 27);
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 5px;
+    font-family: Sono;
+    font-weight: 500;
+    margin-top: -20px;
+    margin-top: 50px;
+}
+
+.email-button {
+    margin-left: 30px;
+    border: none;
+    font-family: Sono;
+    text-decoration: underline;
+    color: #06c;
+}
+
+// male female 
+.footer {
+    display: inline-flex;
+    align-content: center;
+    gap: 55px;
+
+    .footer-left {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .input-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 60%;
+            border: 2px solid rgba(0, 0, 0, .26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+
+        }
+    }
+
+    .text {
+        font-size: 1.5rem;
+        font-weight: 400;
+        user-select: none;
+        cursor: pointer;
+
+    }
+}
+
+.submit {
+    outline: 3px solid #fff;
+
+}
+
+//iamge user
+.img-click {
+    display: flex;
+    justify-content: center;
+    margin-left: 170px;
+    margin-top: 40px;
+    background-color: none;
+}
+
+.info-user {
+    display: grid;
+    justify-content: center;
+    margin-top: 30px;
+    font-family: 'Sono';
+}
+
+//line
+.part-5-content {
+    margin: auto;
+    width: 500px;
+    padding: 5px;
+}
+.text-des {
+    border: 1px
+  }
+  .img-user{
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 60%;
+  }

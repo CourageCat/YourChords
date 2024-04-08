@@ -1,0 +1,89 @@
+.title-myprofile{
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    margin-top: 120px;
+}
+.part2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+.part3{
+    margin-top: 25px ;
+}
+.part5 {
+    margin-top: 40px;
+    display: flex;
+    justify-content: start;
+    margin-left: 0px;
+
+    .button-save-details {
+        width: 170px;
+        height: 50px;
+        font-size: 2rem;
+        text-wrap: nowrap;
+        border: none;
+        background-color: #06c;
+        color: white;
+        font-family: inter;
+        border-radius: 5px;
+
+    }
+
+}
+.profile-2 {
+    background-color: red;
+
+
+}
+
+.part0 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-content {
+    background-color: rgb(21, 21, 105);
+}
+
+.volt8A {
+    display: flex;
+    justify-content: center;
+}
+
+.input-user {
+    padding: 22px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    height: 1px;
+    width: 320px;
+}
+.input-user-text {
+    padding: 22px 20px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    height: 1px;
+    resize: none;
+    width: 520px;
+}
+// contact-right content
+.right-content{
+    width: auto;
+    display: flex;
+    padding: 40px;
+    text-align: start;
+    .right-content-total{
+        display: flex;
+        justify-content: center;
+    }
+}
+.footer-part{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+}

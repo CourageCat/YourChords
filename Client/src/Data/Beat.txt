@@ -1,0 +1,15 @@
+1.
+beatName: Shadow Eyes
+price: 29
+description : New Beat By MinhHien
+genres: POP, HipHop
+vocalRange: C(Man)
+
+2.
+beatName: Jingle bells
+price: 32
+description: New Beat for Christmas
+genres: POP
+vocalRange: G(Woman)
+
+

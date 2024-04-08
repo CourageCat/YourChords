@@ -1,0 +1,269 @@
+@import url('https://fonts.cdnfonts.com/css/newsreader-2');
+@import url('https://fonts.cdnfonts.com/css/inter');
+@import url('https://fonts.cdnfonts.com/css/sono');
+@import url('https://fonts.cdnfonts.com/css/fredoka-one');
+.list-header {
+  margin-top: 60px;
+  margin-bottom: 280px;
+}
+
+* {
+  font-family: Sono;
+}
+
+.title {
+  text-transform: uppercase;
+  margin-left: 450px;
+  background-image: linear-gradient(-225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 100px;
+  border-bottom: 1px solid var(--gray-100, #e4e7e9);
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+// .title{
+//     display: flex;
+//     justify-content: center;
+//     margin-top: 120px;
+//     margin-bottom: 120px;
+//     font-family: Sono;
+//     font-weight: 500 ;
+
+// }
+.list-chords {
+  margin-top: 12px;
+  display: grid;
+  grid-gap: 15px;
+  width: auto;
+  grid-template-columns: 1fr;
+  object-fit: cover;
+}
+
+.choice-header {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.line {
+  width: 60%;
+  background: #ececec;
+  border-radius: 30px;
+  border: 0.5px black solid;
+  margin-bottom: 60px;
+  margin-left: 360px;
+}
+
+.button-chords {
+  text-align: center;
+}
+
+.button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 10px;
+
+}
+
+.button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.button:active {
+  color: #000
+}
+
+.button:active:after {
+  background: transparent;
+}
+
+.button:hover:before {
+  opacity: 1;
+}
+
+.button:after {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+//detail chord
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* relevant styles */
+.list-chords {
+  position: relative;
+  height: 200px;
+  width: 257px;
+}
+
+.img__description {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(255, 255, 255);
+  color: rgb(41, 41, 41);
+  // visibility: hidden;
+  opacity: 0;
+  width: 500px;
+  height: 250px;
+}
+
+// .list-chords:hover .img__description {
+//   visibility: visible;
+//   opacity: 1;
+// }
+
+.img__description {
+  padding: 10px;
+  display: grid;
+  text-align: center;
+  border-radius: 12px;
+  margin-left: 720px;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;
+  margin-top: -230px;
+}
+
+.detail-img {
+  margin-left: 400px;
+}
+
+// add to playlist
+.button-popup-add {
+  height: 60px;
+  width: 260px;
+  margin-top: 15px;
+  border-radius: 5px;
+  color: white;
+  border-radius: 10px;
+
+}
+
+.button-send {
+  width: 80%;
+  height: 40px;
+  margin-left: 88px;
+  border-radius: 12px;
+  background-color: #06c;
+  cursor: pointer;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-family: Sono;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: 2px solid white;
+}
+
+.text-des {
+  border: 1px
+}
+
+.img-user {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+  border-radius: 60%;
+}
+
+//button option
+.button-option-md {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 66%;
+  margin-left: 65px;
+  border-radius: 20px;
+
+  .button-option {
+    height: 40px;
+    width: 70px;
+    color: white;
+    background-color: #06c;
+    border-radius: 8px;
+  }
+}
+
+.chord-collection-select {
+  
+}
+//key, sufix, instument
+.key-option{
+  padding: 10px;
+  font-size: 1.5rem;
+  row-gap: 5px;
+  height: 30px;
+  width: 80px;
+}
+
+.pagination{
+  margin-left: 900px;
+}

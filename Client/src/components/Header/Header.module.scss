@@ -1,0 +1,185 @@
+@import url('https://fonts.cdnfonts.com/css/sono');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+@import url('https://fonts.cdnfonts.com/css/inter');
+
+.img-header {
+  width: 250px;
+  height: 150px;
+}
+
+.header-wrapper {
+  // padding-top: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  background-color: #1C1C1C;
+  //  
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: -100px;
+  margin-left: -5px;
+  // position: fixed;
+  // top: 100px;
+  // width: 100%;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  z-index: 2 ;
+
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+
+  .header-link {
+    color: #fff;
+  }
+
+  .logo {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 4rem;
+    font-weight: 400;
+    user-select: none;
+    font-size: 3.5rem;
+  }
+
+  img {
+    width: 150px;
+  }
+
+  .search {
+    margin-left: 50px;
+    align-items: center;
+  }
+}
+
+.img-shopping-cart{
+  width: 50px;
+  height: 50px;
+}
+
+.cart-number{
+  color: white;
+    font-size: 1.5rem;
+    padding: 3px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    outline: 2px solid white;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 42px;
+  margin-right: 50px;
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+
+    .nav-item {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 400;
+      user-select: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: transparent;
+      color: white;
+      border: none;
+
+    }
+
+    .nav-item:hover {
+      text-decoration: underline;
+      color: #0066CC;
+    }
+  }
+
+  .action {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    height: 60px;
+    background: #0066CC;
+    outline: 3px solid #fff;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+      0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-color: white;
+
+    .login {
+      padding: 9px 30px;
+      font-size: 2.5rem;
+      user-select: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      transition: .0.5s;
+    }
+  }
+}
+
+.username {
+  gap: 20px
+}
+
+.pop-up {
+  width: 120px;
+  background-color: none;
+  font-family: 'poppins';
+  column-gap: 20px;
+  font-size: 20px;
+
+}
+
+.button-popup {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  color: white;
+}
+
+.link-text {
+  margin-top: 10px;
+  align-items: center;
+  display: flex;
+  font-family: 'poppins';
+  justify-content: center;
+  padding: 6px;
+  color: black;
+  font-size: 17px;
+}
+
+.text-all {
+  border-radius: 5px;
+  font-family: poppins;
+  font-weight: 400;
+
+  .link-text {
+    font-size: 17px;
+  }
+}
+
+.button-page {
+  background: none;
+  border: none;
+  font-size: 25px;
+  font-family: inter;
+  font-weight: 400;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  border: none;
+
+
+}
