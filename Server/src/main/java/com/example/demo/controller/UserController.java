@@ -19,6 +19,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +41,7 @@ public class UserController {
 
     // Update Customer Info
     @PatchMapping("/customer")
-    public ResponseEntity<String> updateUserInfo(@RequestPart(value = "file", required = false)MultipartFile image, @Validated(UpdateValidation.Customer.class) @RequestPart("json") UserDTO userDTO){
+    public ResponseEntity<String> updateUserInfo(@RequestPart(value = "file", required = false)MultipartFile image,  @RequestPart("json") UserDTO userDTO) throws IOException {
         return this.userService.updateUserInfo(userDTO, image);
     }
 
@@ -52,7 +53,7 @@ public class UserController {
 
     // Update Musician Info
     @PatchMapping("/musician")
-    public ResponseEntity<String> updateMusicianInfo(@RequestPart(value = "file", required = false)MultipartFile image, @Validated(UpdateValidation.Musician.class) @RequestPart("json") UserDTO userDTO){
+    public ResponseEntity<String> updateMusicianInfo(@RequestPart(value = "file", required = false)MultipartFile image, @Validated(UpdateValidation.Musician.class) @RequestPart("json") UserDTO userDTO) throws IOException {
         return this.userService.updateMusicianInfo(userDTO, image);
     }
 

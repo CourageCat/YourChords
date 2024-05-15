@@ -25,9 +25,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Transactional
@@ -52,6 +54,9 @@ public class UserService {
     private EmailService emailService;
 
     @Autowired
+    private CloudinaryService cloudinaryService;
+
+    @Autowired
     private GoogleCloudService service;
 
     public int countBeatRequestRejected(Long id){
@@ -72,9 +77,9 @@ public class UserService {
         return count;
     }
 
-    private ResponseEntity<String> getStringResponseEntity(MultipartFile image, User user) {
+    private ResponseEntity<String> getStringResponseEntity(MultipartFile image, User user) throws IOException {
         if (image != null && !image.isEmpty()) {
-            if (uploadFile(image, user)) return new ResponseEntity<>("Update Failed!", HttpStatus.NOT_IMPLEMENTED);
+            if (!uploadFile(image, user)) return new ResponseEntity<>("Update Failed!", HttpStatus.NOT_IMPLEMENTED);
             this.userRepository.save(user);
             return new ResponseEntity<>("Update Successfully", HttpStatus.OK);
         }
@@ -82,15 +87,16 @@ public class UserService {
         return new ResponseEntity<>("Update Successfully", HttpStatus.OK);
     }
 
-    private boolean uploadFile(MultipartFile image, User user) {
-        String path = this.service.uploadFile(image, user.getId(), "avatar", "full", user.getObjectName());
+    private boolean uploadFile(MultipartFile image, User user) throws IOException {
+        Map path = this.cloudinaryService.uploadFile(image, "your_chords/images");
+
         if (path == null) {
-            return true;
+            return false;
         }
-        String fileName = this.extractObjectNameFromUrl(path);
-        user.setAvatar(path);
+        String fileName = path.get("public_id").toString();
+        user.setAvatar(path.get("url").toString());
         user.setObjectName(fileName);
-        return false;
+        return true;
     }
 
     private String extractObjectNameFromUrl(String fullUrl) {
@@ -248,7 +254,8 @@ public class UserService {
     }
 
     // Update User Info
-    public ResponseEntity<String> updateUserInfo(UserDTO userDTO, MultipartFile image) {
+    public ResponseEntity<String> updateUserInfo(UserDTO userDTO, MultipartFile image) throws IOException {
+        System.out.println(userDTO.getFullName());
         Optional<User> foundUser = this.userRepository.findUserByIdAndStatus(userDTO.getId(), 1);
         if (foundUser.isPresent()) {
             User.Gender gender = User.Gender.valueOf(userDTO.getGender());
@@ -264,7 +271,7 @@ public class UserService {
     }
 
     // Update Musician Info
-    public ResponseEntity<String> updateMusicianInfo(UserDTO userDTO, MultipartFile image) {
+    public ResponseEntity<String> updateMusicianInfo(UserDTO userDTO, MultipartFile image) throws IOException {
         Optional<User> foundUser = this.userRepository.findUserByIdAndStatus(userDTO.getId(), 1);
         if (foundUser.isPresent()) {
             User.Gender gender = User.Gender.valueOf(userDTO.getGender());
