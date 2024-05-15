@@ -1,0 +1,15 @@
+Musician
+User
+Chord
+Genre
+Beat
+genreBeat
+Song
+genreSong
+ChordofSong
+SongPlayList
+SongOfPlayList
+ChordCollection
+ChordinCollection
+SongComment
+SongReport
