@@ -24,7 +24,7 @@ public class CloudinaryService {
                 ));
     }
 
-    public Map uploadVideo(MultipartFile file, String folderName) throws IOException {
+    public Map uploadAudioOrVideo(MultipartFile file, String folderName) throws IOException {
         return cloudinary.uploader().upload(file.getBytes(),
                 ObjectUtils.asMap(
                         "resource_type", "video",

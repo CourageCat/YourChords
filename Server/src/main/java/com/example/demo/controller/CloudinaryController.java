@@ -23,7 +23,7 @@ public class CloudinaryController {
     @PostMapping("/upload/video")
     public ResponseEntity<?> uploadVideo(@RequestPart("file") MultipartFile file,
                                          @RequestPart("folder") String folderName) throws IOException {
-        return ResponseEntity.ok(cloudinaryService.uploadVideo(file, folderName));
+        return ResponseEntity.ok(cloudinaryService.uploadAudioOrVideo(file, folderName));
     }
 
     @DeleteMapping ("/delete/image")

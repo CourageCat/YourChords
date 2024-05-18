@@ -22,6 +22,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.*;
 
 @Service
@@ -35,6 +36,8 @@ public class BeatService {
     private GenreRepository genreRepository;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private CloudinaryService cloudinaryService;
     @Autowired
     private GoogleCloudService service;
     @Autowired
@@ -221,7 +224,7 @@ public class BeatService {
         }
     }
 
-    public ResponseEntity<String> insertBeat(MultipartFile full, MultipartFile demo, BeatDTO beatDTO) {
+    public ResponseEntity<String> insertBeat(MultipartFile full, MultipartFile demo, BeatDTO beatDTO) throws IOException {
         Optional<User> foundUser = Optional.ofNullable(this.userRepository.findByUsername(beatDTO.getUsername()));
         if (foundUser.isPresent()) {
             Beat beat = new Beat(beatDTO.getBeatName(),
@@ -233,11 +236,14 @@ public class BeatService {
                     0, 0, 1, 0, 0, 0);
             this.beatRepository.save(beat);
 
-            String path = this.service.uploadFile(full, beat.getId(), "audio", "full", beat.getObjectName());
-            String pathDemo = this.service.uploadFile(demo, beat.getId(), "audio", "demo", beat.getObjectNameDemo());;
+            Map beatDemo = this.cloudinaryService.uploadAudioOrVideo(demo, "your_chords/videos");
+            Map beatFull = this.cloudinaryService.uploadAudioOrVideo(full, "your_chords/videos");
 
-            String fileName = this.extractObjectNameFromUrl(path);
-            String fileNameDemo = this.extractObjectNameFromUrl(pathDemo);
+            String path = beatFull.get("url").toString();
+            String pathDemo = beatDemo.get("url").toString();
+
+            String fileName = beatFull.get("public_id").toString();
+            String fileNameDemo = beatDemo.get("public_id").toString();
 
             setPathAndName(path, pathDemo, fileName, fileNameDemo , beat);
 
@@ -247,24 +253,22 @@ public class BeatService {
         }
     }
 
-    public ResponseEntity<String> updateBeat(MultipartFile sound, MultipartFile sound2, BeatDTO newBeat, Long id) {
+    public ResponseEntity<String> updateBeat(MultipartFile full, MultipartFile demo, BeatDTO newBeat, Long id) throws IOException {
         Optional<User> foundUser = this.userRepository.findUserByIdAndStatus(newBeat.getUserId(), 1);
         if(foundUser.isPresent()) {
             Optional<Beat> foundBeat = this.beatRepository.findById(id);
             if (foundBeat.isPresent()) {
                 Beat beat = foundBeat.get();
                 beat.setBeatName(newBeat.getBeatName());
-                if (sound != null) {
-                    String pathfull = service.uploadFile(sound, foundUser.get().getId(), "audio", "full", beat.getObjectName());
-                    String objectfull = extractObjectNameFromUrl(pathfull);
-                    beat.setBeatSoundFull(objectfull);
-                    beat.setObjectName(objectfull);
+                if (full != null) {
+                    Map beatFull = this.cloudinaryService.uploadAudioOrVideo(full, "your_chords/videos");
+                    beat.setBeatSoundFull(beatFull.get("url").toString());
+                    beat.setObjectName(beatFull.get("public_id").toString());
                 }
-                if (sound2 != null) {
-                    String pathdemo = service.uploadFile(sound2, foundUser.get().getId(), "audio", "demo", beat.getObjectNameDemo());
-                    String objectdemo = extractObjectNameFromUrl(pathdemo);
-                    beat.setBeatSoundDemo(pathdemo);
-                    beat.setObjectNameDemo(objectdemo);
+                if (demo != null) {
+                    Map beatDemo = this.cloudinaryService.uploadAudioOrVideo(demo, "your_chords/videos");
+                    beat.setBeatSoundDemo(beatDemo.get("url").toString());
+                    beat.setObjectNameDemo(beatDemo.get("public_id").toString());
                 }
                 beat.setPrice(newBeat.getPrice());
                 beat.setGenresofbeat(genreSet(newBeat));
@@ -530,4 +534,20 @@ public class BeatService {
         return new ResponseEntity<>(false, HttpStatus.NOT_FOUND);
     }
 
+    public ResponseEntity<String> updateAudioBeat(MultipartFile full, MultipartFile demo, Long id) throws IOException {
+        Optional<Beat> foundBeat = this.beatRepository.findById(id);
+        if(foundBeat.isPresent()){
+            Map beatFull = this.cloudinaryService.uploadAudioOrVideo(full, "your_chords/videos");
+            Map beatDemo = this.cloudinaryService.uploadAudioOrVideo(demo, "your_chords/videos");
+
+            foundBeat.get().setBeatSoundFull(beatFull.get("url").toString());
+            foundBeat.get().setObjectName(beatFull.get("public_id").toString());
+            foundBeat.get().setBeatSoundDemo(beatDemo.get("url").toString());
+            foundBeat.get().setObjectNameDemo(beatDemo.get("public_id").toString());
+
+            this.beatRepository.save(foundBeat.get());
+            return new ResponseEntity<String>("Update Audio Successfully.", HttpStatus.OK);
+        }
+        return new ResponseEntity<String>("Can not found Beat with Id: " + id, HttpStatus.NOT_IMPLEMENTED);
+    }
 }

@@ -6,7 +6,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.*;
-import com.example.demo.entity.Beat;
 import com.example.demo.service.BeatService;
 import com.example.demo.validationgroups.BeatValidation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +14,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -80,14 +80,19 @@ public class BeatController {
 
     //Add Beat in MS
     @PostMapping({""})
-    public ResponseEntity<String> uploadBeat(@RequestPart("file1")MultipartFile full,@RequestPart("file2")MultipartFile demo, @Validated(BeatValidation.UploadBeat.class) @RequestPart("json") BeatDTO beatDTO) {
+    public ResponseEntity<String> uploadBeat(@RequestPart("file1")MultipartFile full,@RequestPart("file2")MultipartFile demo, @Validated(BeatValidation.UploadBeat.class) @RequestPart("json") BeatDTO beatDTO) throws IOException {
         return this.beatService.insertBeat(full, demo, beatDTO);
     }
 
     //Update beat in MS
     @PatchMapping({"/{id}"})
-    public ResponseEntity<String> updateBeat(@RequestPart(value = "file1", required = false)MultipartFile sound, @RequestPart(value = "file2", required = false)MultipartFile sound2, @Validated(BeatValidation.UpdateBeat.class) @RequestPart("json") BeatDTO newBeat, @PathVariable Long id) {
-            return this.beatService.updateBeat(sound, sound2, newBeat, id);
+    public ResponseEntity<String> updateBeat(@RequestPart(value = "file1", required = false)MultipartFile full, @RequestPart(value = "file2", required = false)MultipartFile demo, @Validated(BeatValidation.UpdateBeat.class) @RequestPart("json") BeatDTO newBeat, @PathVariable Long id) throws IOException {
+            return this.beatService.updateBeat(full, demo, newBeat, id);
+    }
+
+    @PatchMapping({"audio/{id}"})
+    public ResponseEntity<String> updateAudioBeat(@RequestPart(value = "file1", required = false)MultipartFile full, @RequestPart(value = "file2", required = false)MultipartFile demo, @PathVariable Long id) throws IOException {
+        return this.beatService.updateAudioBeat(full, demo, id);
     }
 
     @PostMapping({"/cart/view"})

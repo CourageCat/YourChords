@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dto.ChordDTO;
 import com.example.demo.dto.ChordResponseDTO;
+import com.example.demo.dto.ChordUpdateDTO;
 import com.example.demo.entity.ChordBasic;
 import com.example.demo.repository.ChordBasicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Service
@@ -19,21 +22,25 @@ public class ChordBasicService {
 
     @Autowired
     private ChordBasicRepository chordBasicRepository;
+
+    @Autowired
+    private CloudinaryService cloudinaryService;
+
     @Autowired
     private GoogleCloudService service;
 
-    public ChordBasic findById(Long id){
-        Optional<ChordBasic> foundChord=chordBasicRepository.findById(id);
-        if (foundChord.isEmpty()){
+    public ChordBasic findById(Long id) {
+        Optional<ChordBasic> foundChord = chordBasicRepository.findById(id);
+        if (foundChord.isEmpty()) {
             return null;
-        }else {
+        } else {
             return chordBasicRepository.findById(id).orElseThrow();
         }
     }
 
-    public List<ChordBasic> searchChord(String key, String suffix, String type){
-        List<ChordBasic> chordEntity=chordBasicRepository.findChord(key, suffix, type);
-        if (chordEntity.isEmpty()){
+    public List<ChordBasic> searchChord(String key, String suffix, String type) {
+        List<ChordBasic> chordEntity = chordBasicRepository.findChord(key, suffix, type);
+        if (chordEntity.isEmpty()) {
             return null;
         } else {
             for (ChordBasic value : chordEntity) {
@@ -42,30 +49,29 @@ public class ChordBasicService {
             return chordEntity;
         }
     }
-    
-    public ResponseEntity<String> uploadChord(MultipartFile image , ChordDTO chordDTO){
+
+    public ResponseEntity<String> uploadChord(MultipartFile image, ChordDTO chordDTO) throws IOException {
         Optional<ChordBasic> foundChord = Optional.ofNullable(this.chordBasicRepository.findByChordNameAndType(chordDTO.getName(), chordDTO.getType()));
-        if(foundChord.isEmpty()){
+        if (foundChord.isEmpty()) {
             ChordBasic basic = new ChordBasic(chordDTO.getName(),
                     chordDTO.getKey(),
                     chordDTO.getSuffix(),
                     chordDTO.getScript(),
                     chordDTO.getType());
+            Map path = this.cloudinaryService.uploadFile(image, "your_chords/images");
+            basic.setImage(path.get("url").toString());
             this.chordBasicRepository.save(basic);
-            String path = this.service.uploadFile(image, basic.getChordId(), "image", "full", null);
-            basic.setImage(path);
-            this.chordBasicRepository.save(basic);
-        return new ResponseEntity<>("Add được rồi đó Hiển", HttpStatus.OK);
+            return new ResponseEntity<>("Add được rồi đó Hiển", HttpStatus.OK);
         } else {
-        return new ResponseEntity<>("Add ko được rồi, check lại database", HttpStatus.NOT_IMPLEMENTED);
+            return new ResponseEntity<>("Add ko được rồi, check lại database", HttpStatus.NOT_IMPLEMENTED);
         }
     }
 
-    public List<ChordResponseDTO> getGuitarChord(){
+    public List<ChordResponseDTO> getGuitarChord() {
         List<ChordBasic> basics = this.chordBasicRepository.findChordBasicsByType("Guitar");
-        if(!basics.isEmpty()){
+        if (!basics.isEmpty()) {
             List<ChordResponseDTO> dtos = new ArrayList<>();
-            for(ChordBasic value : basics){
+            for (ChordBasic value : basics) {
                 ChordResponseDTO dto = new ChordResponseDTO(value.getChordId(),
                         "[" + value.getChordName() + "]",
                         value.getImage());
@@ -76,14 +82,14 @@ public class ChordBasicService {
         return null;
     }
 
-    private List<ChordResponseDTO> getChordResponseDTO(List<ChordBasic> chordBasicList){
+    private List<ChordResponseDTO> getChordResponseDTO(List<ChordBasic> chordBasicList) {
         if (chordBasicList.isEmpty())
             return null;
         else {
             List<ChordResponseDTO> dtos = new ArrayList<>();
-            for (ChordBasic i : chordBasicList){
+            for (ChordBasic i : chordBasicList) {
                 ChordResponseDTO dto = new ChordResponseDTO(
-                    i.getChordId(),
+                        i.getChordId(),
                         i.getChordName(),
                         i.getImage(),
                         i.getChordKey(),
@@ -98,12 +104,25 @@ public class ChordBasicService {
     }
 
     public List<ChordResponseDTO> searchChordByType(String type) {
-        List<ChordBasic> chordEntity=chordBasicRepository.findChordBasicsByType(type);
-        if (chordEntity.isEmpty()){
+        List<ChordBasic> chordEntity = chordBasicRepository.findChordBasicsByType(type);
+        if (chordEntity.isEmpty()) {
             return null;
         } else {
             List<ChordResponseDTO> list = getChordResponseDTO(chordEntity);
             return list;
         }
+    }
+
+    public ResponseEntity<String> updateChord(MultipartFile image, ChordUpdateDTO chordUpdateDTO) throws IOException {
+        ChordBasic chordInputted = this.chordBasicRepository.findByChordId(chordUpdateDTO.getId());
+        if (chordInputted != null) {
+            if (image != null) {
+                Map imageResponse = this.cloudinaryService.uploadFile(image, "your_chords/images");
+                chordInputted.setImage(imageResponse.get("url").toString());
+                this.chordBasicRepository.save(chordInputted);
+                return new ResponseEntity<String>("Update successfully.", HttpStatus.OK);
+            }
+        }
+        return new ResponseEntity<String>("Can not find any chord with id" + chordUpdateDTO.getId(), HttpStatus.NOT_IMPLEMENTED);
     }
 }
